@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+matplotlib==3.5.2
+numpy==1.22.4
+pandas==1.4.2
+=======
+numpy==1.22.4
+pandas==1.4.2
+scikit_learn==1.2.0
+>>>>>>> 9faa8005cdc2354ba256cc439961cffa18971bfc
+streamlit==1.10.0

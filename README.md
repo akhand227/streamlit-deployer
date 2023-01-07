@@ -1,14 +1,19 @@
-# Penguins web app deployed on Heroku
+# How to Use
+``` git clone https://github.com/akshayubc/ubc-course-compare.git```
+1. Install dependencies [requirements.txt]
+2. Move to main.py directory and run: <br>
+```streamlit run main.py```
 
-Check out the YouTube video showing the development of this web app at https://youtu.be/zK4Ch6e1zq8
+# What's special
+1. Compare courses visually
+![Course Comparison](graphs_comparison.png)
 
-The deployed web app is live at https://dp-penguins.herokuapp.com/
+2. Faster Data retrieval than UBC PAIR Grade Distribution
 
-This web app predicts the species of penguins as a function of their input parameters (bill length, bill width, flipper length, body mass, sex and island).
+3. Makes it easier to compare courses based on important metrics.
+![Course Comparison](specs_comparison.png)
 
-The web app was built in Python using the following libraries:
-* streamlit
-* pandas
-* numpy
-* scikit-learn
-* pickle
+
+Special Thanks to github user DonneyF for easier data access.
+
+
