@@ -139,8 +139,6 @@ y21 = overall2[(x[10])]
 y21 = dict(y20)
 
 
-overall1 = pd.DataFrame(overall1)
-overall1
 y_c1 = [y0.values(),y1.values(),y2.values(),y3.values(),y4.values(),y5.values(),y6.values(),y7.values(),y8.values(),y9.values(),y10.values(), y10.values()]
 y_c2 = [y11.values(),y12.values(),y13.values(),y14.values(),y15.values(),y16.values(),y17.values(),y18.values(),y19.values(),y20.values(), y21.values()]
 
