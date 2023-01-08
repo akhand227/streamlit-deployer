@@ -1,3 +1,6 @@
+#Live On: 
+https://akhand227-streamlit-deployer-main-lbeyrf.streamlit.app/
+
 # How to Use
 ``` git clone https://github.com/akshayubc/ubc-course-compare.git```
 1. Install dependencies [requirements.txt]
