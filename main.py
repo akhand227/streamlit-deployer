@@ -163,7 +163,3 @@ st.bar_chart(chart_data2)
 
 
 st.caption("Made by Akshay Khandelwal")
-
-
-
-
