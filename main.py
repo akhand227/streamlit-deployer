@@ -4,6 +4,7 @@ import pandas as pd
 import streamlit as st 
 import matplotlib.pyplot as plt
 
+
 st.header("UBC Course Compare")
 url = "https://raw.githubusercontent.com/DonneyF/ubc-pair-grade-data/1516765eb6fd962066149b18ec8c6d64ae06046a/tableau-dashboard/UBCV"
 url2 = "https://raw.githubusercontent.com/DonneyF/ubc-pair-grade-data/1516765eb6fd962066149b18ec8c6d64ae06046a/tableau-dashboard/UBCV"
@@ -22,8 +23,8 @@ year1 = st.sidebar.selectbox(
      (list(range(2014, 2022))), 7)
 
 term1 = st.sidebar.radio(
-     "Select Term for Course 1:  Summer (S), Winter (W)",
-     ('S', 'W'))
+     "Select Term for Course 1:  Winter (W), Winter (S)",
+     ('W', 'S'))
 url = url + '/' + str(year1) + str(term1) +"/" 
 url = url + "UBCV-" + str(year1) + str(term1) +"-" + cc1 +".csv"
 course_num1 = pd.read_csv(url)
@@ -78,63 +79,73 @@ st.sidebar.caption('Having issues? Contact akshay.exun@gmail.com')
 # Matplotlib graphing grading trend
 
 x =  ['<50','50-54','55-59','60-63', '64-67','68-71', '72-75', '76-79', '80-84', '85-89','90-100']
-y =[]
+y = []
 i=0
+
 overall1 = load_data1[(load_data1['Section'] == 'OVERALL')]
 overall2 = load_data2[(load_data2['Section']== 'OVERALL')]
 
-y1 = overall1[(x[0])]
-y1= dict(y1)
-y2 = overall1[(x[1])]
-y2 = dict(y2)
-y3 = overall1[x[2]]
-y3= dict(y3)
-y4 = overall1[(x[3])]
-y4 = dict(y4)
-y5 = overall1[(x[4])]
-y5 = dict(y5)
-y6 = overall1[x[5]]
-y6= dict(y6)
-y7 = overall1[(x[6])]
-y7 = dict(y7)
-y8 = overall1[(x[7])]
-y8 = dict(y8)
-y9 = overall1[(x[8])]
-y9 = dict(y9)
-y10 = overall1[(x[9])]
-y10 = dict(y10)
-y11 = overall1[(x[10])]
-y11 = dict(y11)
+# for items in x:
+#     i=i+1
+#     y[i] = overall1[(x[0])]
+#     y[i] = dict(y[i])
+    
 
-y21 = overall2[(x[0])]
-y21= dict(y21)
-y22 = overall2[(x[1])]
-y22 = dict(y22)
-y23 = overall2[x[2]]
-y23= dict(y23)
-y24 = overall2[(x[3])]
-y24 = dict(y24)
-y25 = overall2[(x[4])]
-y25 = dict(y25)
-y26 = overall2[x[5]]
-y26= dict(y26)
-y27 = overall2[(x[6])]
-y27 = dict(y27)
-y28 = overall2[(x[7])]
-y28 = dict(y28)
-y29 = overall2[(x[8])]
-y29 = dict(y29)
-y30 = overall2[(x[9])]
-y30 = dict(y30)
-y31 = overall2[(x[10])]
-y31 = dict(y31)
+
+y0 = overall1[(x[0])]
+y0= dict(y0)
+y1 = overall1[(x[1])]
+y1 = dict(y1)
+y2 = overall1[x[2]]
+y2= dict(y2)
+y3 = overall1[(x[3])]
+y3 = dict(y3)
+y4 = overall1[(x[4])]
+y4 = dict(y4)
+y5 = overall1[x[5]]
+y5= dict(y5)
+y6 = overall1[(x[6])]
+y6 = dict(y6)
+y7 = overall1[(x[7])]
+y7 = dict(y7)
+y8 = overall1[(x[8])]
+y8 = dict(y8)
+y9 = overall1[(x[9])]
+y9 = dict(y9)
+y10 = overall1[(x[10])]
+y10 = dict(y10)
+
+y11 = overall2[(x[0])]
+y11= dict(y11)
+y12 = overall2[(x[1])]
+y12 = dict(y12)
+y13 = overall2[x[2]]
+y13= dict(y13)
+y14 = overall2[(x[3])]
+y14 = dict(y14)
+y15 = overall2[(x[4])]
+y15 = dict(y15)
+y16 = overall2[x[5]]
+y16= dict(y16)
+y17 = overall2[(x[6])]
+y17 = dict(y17)
+y18 = overall2[(x[7])]
+y18 = dict(y18)
+y19 = overall2[(x[8])]
+y19 = dict(y19)
+y20 = overall2[(x[9])]
+y20 = dict(y20)
+y21 = overall2[(x[10])]
+y21 = dict(y20)
+
 
 overall1 = pd.DataFrame(overall1)
+overall1
+y_c1 = [y0.values(),y1.values(),y2.values(),y3.values(),y4.values(),y5.values(),y6.values(),y7.values(),y8.values(),y9.values(),y10.values(), y10.values()]
+y_c2 = [y11.values(),y12.values(),y13.values(),y14.values(),y15.values(),y16.values(),y17.values(),y18.values(),y19.values(),y20.values(), y21.values()]
 
-y_c1 = [y1.values(),y2.values(),y3.values(),y4.values(),y5.values(),y6.values(),y7.values(),y8.values(),y9.values(),y10.values(),y11.values()]
-y_c2 = [y21.values(),y22.values(),y23.values(),y24.values(),y25.values(),y26.values(),y27.values(),y28.values(),y29.values(),y30.values(),y31.values()]
 chart_data = pd.DataFrame(
- y_c1, x[:len(x):1], 
+ y_c1 [0:(len(y_c1)-1)], x 
 #plt.ylabel("Number of Students"),
 # plt.title(overall1['Title'])
 )
@@ -143,8 +154,13 @@ chart_data2 = pd.DataFrame(
     y_c2, x
 )
 st.subheader("Grade Distribution for " + cc1 + str(cn1) + ":")
-st.line_chart(chart_data)
-st.line_chart(chart_data2)
+st.bar_chart(chart_data)
+avg1 = overall1['Avg']
+avg1 = dict(y20)
+st.subheader("Grade Distribution for " + cc2 + str(cn2) + ":")
+st.bar_chart(chart_data2)
+
+
 
 st.caption("Made by Akshay Khandelwal")
 
