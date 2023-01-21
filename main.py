@@ -48,7 +48,7 @@ cc2 = st.sidebar.selectbox(
 
 year2 = st.sidebar.selectbox(
      'Enter year for Course 2',
-     (list(range(2014, 2021))),6)
+  (list(range(2014, 2022))), 7)
 
 term2 = st.sidebar.radio(
      "Select Term for Course 2:  Summer (S), Winter (W)",
